@@ -151,6 +151,60 @@
             </objects>
             <point key="canvasLocation" x="1048" y="935"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="Zpa-KE-sz8">
+            <objects>
+                <viewController storyboardIdentifier="CommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RST-GS-O0j" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LZg-yN-pX6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgM-8a-AGO">
+                                <rect key="frame" x="57" y="188" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="fbc-yC-80e"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCancelButton:" destination="RST-GS-O0j" eventType="touchUpInside" id="pzx-I8-9H7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPa-Em-XFi">
+                                <rect key="frame" x="57" y="138" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="MyQ-Wm-2XC"/>
+                                </constraints>
+                                <state key="normal" title="送信" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleSubmitButton:" destination="RST-GS-O0j" eventType="touchUpInside" id="1vh-HR-evL"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメント" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIS-BR-dOA">
+                                <rect key="frame" x="10" y="94" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LIS-BR-dOA" firstAttribute="leading" secondItem="i0B-la-Cyf" secondAttribute="leading" constant="10" id="24E-Xq-5Ve"/>
+                            <constraint firstItem="i0B-la-Cyf" firstAttribute="trailing" secondItem="LIS-BR-dOA" secondAttribute="trailing" constant="10" id="3gb-RI-P9M"/>
+                            <constraint firstItem="wPa-Em-XFi" firstAttribute="top" secondItem="LIS-BR-dOA" secondAttribute="bottom" constant="10" id="FCG-cK-51H"/>
+                            <constraint firstItem="LIS-BR-dOA" firstAttribute="top" secondItem="i0B-la-Cyf" secondAttribute="top" constant="50" id="nzc-xA-sGw"/>
+                            <constraint firstItem="kgM-8a-AGO" firstAttribute="top" secondItem="wPa-Em-XFi" secondAttribute="bottom" constant="10" id="wz0-I5-ROg"/>
+                            <constraint firstItem="kgM-8a-AGO" firstAttribute="centerX" secondItem="LZg-yN-pX6" secondAttribute="centerX" id="zEU-ay-Lmg"/>
+                            <constraint firstItem="wPa-Em-XFi" firstAttribute="centerX" secondItem="LZg-yN-pX6" secondAttribute="centerX" id="zk8-NB-7SA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i0B-la-Cyf"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="LIS-BR-dOA" id="SDU-2i-NW4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emi-V7-iHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-801" y="1642"/>
+        </scene>
         <!--Post View Controller-->
         <scene sceneID="q7e-JL-K01">
             <objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D70A132547B63A001F72F4 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70A122547B63A001F72F4 /* CommentViewController.swift */; };
 		04F11C972545705700559116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F11C962545705700559116 /* AppDelegate.swift */; };
 		04F11C992545705700559116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F11C982545705700559116 /* SceneDelegate.swift */; };
 		04F11C9E2545705700559116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F11C9C2545705700559116 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D70A122547B63A001F72F4 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		04F11C932545705700559116 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F11C962545705700559116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F11C982545705700559116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				04F11CB02545715900559116 /* PostViewController.swift */,
 				04F11CB22545719500559116 /* SettingViewController.swift */,
 				04F11CB42545778600559116 /* TabBarController.swift */,
+				04D70A122547B63A001F72F4 /* CommentViewController.swift */,
 				04F11CB82545A4EE00559116 /* Const.swift */,
 				04F11CBA2545A70E00559116 /* PostData.swift */,
 				04F11CBC2545A75900559116 /* PostTableViewCell.swift */,
@@ -246,6 +249,7 @@
 				04F11CB32545719500559116 /* SettingViewController.swift in Sources */,
 				04F11CBB2545A70E00559116 /* PostData.swift in Sources */,
 				04F11CAB2545711900559116 /* LoginViewController.swift in Sources */,
+				04D70A132547B63A001F72F4 /* CommentViewController.swift in Sources */,
 				04F11C972545705700559116 /* AppDelegate.swift in Sources */,
 				04F11C992545705700559116 /* SceneDelegate.swift in Sources */,
 				04F11CB92545A4EE00559116 /* Const.swift in Sources */,
