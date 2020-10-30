@@ -61,6 +61,20 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        /*let postId = postData.id
+        firebase.database().ref('/users')
+        .orderByChild('name').startAt('sato').endAt('sato')
+        .once('value',function(snapshot) {console.log(snapshot.val())})
+        
+        // コメント内容の表示
+        self.commentLabel.text = "\(commentData.name!) : \(commentData.comment!)"
+        
+        // コメント数の表示
+        let commentNumber = commentData.comment.count
+        commentNumLabel.text = "\(commentNumber)"*/
+        
+        
     }
-    
+
 }

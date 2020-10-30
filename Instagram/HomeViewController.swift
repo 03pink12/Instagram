@@ -111,13 +111,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    var postId = ""
+    
     @objc func commentButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: コメントボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+       let touch = event.allTouches?.first
+       let point = touch!.location(in: self.tableView)
+       let indexPath = tableView.indexPathForRow(at: point)
+       // 配列からタップされたインデックスのデータを取り出す
+       let postData = postArray[indexPath!.row]
+       // postのidを代入
+       postId = postData.id
+        
+        //画面遷移
         let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "CommentViewController")
+        let nextView = storyboard.instantiateViewController(withIdentifier: "CommentViewController")as! CommentViewController
+        nextView.postId = postData.id
         self.present(nextView, animated: true, completion: nil)
-        //navigationController?.pushViewController(nextView, animated: true)
     }
+
 
 
 }
