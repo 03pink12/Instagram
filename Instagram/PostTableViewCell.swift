@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseUI
+import Firebase
 
 class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
@@ -18,6 +19,11 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var commentNumLabel: UILabel!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentLabel: UILabel!
+    
+    // コメントデータを格納する配列
+    var commentArray: [CommentData] = []
+    // Firestoreのリスナー
+    var listener: ListenerRegistration!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,20 +67,31 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
-        
-        /*let postId = postData.id
-        firebase.database().ref('/users')
-        .orderByChild('name').startAt('sato').endAt('sato')
-        .once('value',function(snapshot) {console.log(snapshot.val())})
-        
-        // コメント内容の表示
-        self.commentLabel.text = "\(commentData.name!) : \(commentData.comment!)"
-        
-        // コメント数の表示
-        let commentNumber = commentData.comment.count
-        commentNumLabel.text = "\(commentNumber)"*/
-        
-        
+
+                // コメントデータをクエリで取得
+                let postId = postData.id
+                let commentRef = Firestore.firestore().collection(Const.CommentPath)
+                commentRef.whereField("postId", isEqualTo: postId)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            var comments = ""
+                            let count = querySnapshot!.documents.count
+                            for document in querySnapshot!.documents {
+                                let name:String = document.get("name") as! String
+                                let comment:String = document.get("comment") as! String
+                                comments += "\(name)：\(comment)\n"
+                            }
+                            // コメント内容の表示
+                            self.commentLabel.text = "\(comments)"
+                            // コメント数の表示
+                            self.commentNumLabel.text = "\(count)"
+
+                        }
+                }
+        }
+
     }
 
-}
+

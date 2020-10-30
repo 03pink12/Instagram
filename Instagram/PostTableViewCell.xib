@@ -32,6 +32,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Go4-gf-Fxq">
                         <rect key="frame" x="30" y="446" width="345" height="28.5"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -71,6 +72,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXy-r6-zcp">
                         <rect key="frame" x="70" y="484.5" width="305" height="20.5"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -107,7 +109,7 @@
                 <outlet property="captionLabel" destination="Go4-gf-Fxq" id="ti1-lC-KNY"/>
                 <outlet property="commentButton" destination="FEz-Bt-XFL" id="Ntc-FI-RoB"/>
                 <outlet property="commentLabel" destination="EXy-r6-zcp" id="9pR-F9-0dg"/>
-                <outlet property="commentNumLabel" destination="XG6-zk-xLs" id="GTW-ln-7io"/>
+                <outlet property="commentNumLabel" destination="Mi9-SM-eW8" id="xYb-RT-vks"/>
                 <outlet property="dateLabel" destination="F5t-5s-rVK" id="mad-Ku-07U"/>
                 <outlet property="likeButton" destination="ji5-x4-FXm" id="O3E-PW-Qfc"/>
                 <outlet property="likeLabel" destination="MNd-BJ-qOt" id="1JY-MP-5ec"/>

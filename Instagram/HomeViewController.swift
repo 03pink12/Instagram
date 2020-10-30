@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
 
         // カスタムセルを登録する
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
@@ -47,6 +48,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     // 取得したdocumentをもとにPostDataを作成し、postArrayの配列にする。
                     self.postArray = querySnapshot!.documents.map { document in
                         print("DEBUG_PRINT: document取得 \(document.documentID)")
+                        
                         let postData = PostData(document: document)
                         return postData
                     }
@@ -131,7 +133,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         nextView.postId = postData.id
         self.present(nextView, animated: true, completion: nil)
     }
-
 
 
 }
