@@ -20,10 +20,6 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentLabel: UILabel!
     
-    // コメントデータを格納する配列
-    var commentArray: [CommentData] = []
-    // Firestoreのリスナー
-    var listener: ListenerRegistration!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +33,7 @@ class PostTableViewCell: UITableViewCell {
     }
 
     // PostDataの内容をセルに表示
-    func setPostData(_ postData: PostData) {
+    func setPostData(_ postData: PostData, commentArray: Array<CommentData>) {
         // 画像の表示
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
@@ -67,31 +63,27 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
-
-                // コメントデータをクエリで取得
-                let postId = postData.id
-                let commentRef = Firestore.firestore().collection(Const.CommentPath)
-                commentRef.whereField("postId", isEqualTo: postId)
-                    .getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            print("Error getting documents: \(err)")
-                        } else {
-                            var comments = ""
-                            let count = querySnapshot!.documents.count
-                            for document in querySnapshot!.documents {
-                                let name:String = document.get("name") as! String
-                                let comment:String = document.get("comment") as! String
-                                comments += "\(name)：\(comment)\n"
-                            }
-                            // コメント内容の表示
-                            self.commentLabel.text = "\(comments)"
-                            // コメント数の表示
-                            self.commentNumLabel.text = "\(count)"
-
-                        }
+                
+        //コメントデータを表示
+        var commentNum = 0
+        var comments = ""
+        for commentData in commentArray{
+            if commentData.postId == postData.id{
+                if comments == ""{
+                    comments += "\(commentData.name!)：\(commentData.comment!)"
+                }else{
+                    comments += "\n\(commentData.name!)：\(commentData.comment!)"
                 }
+                commentNum += 1
+            }
         }
+        // コメント内容の表示
+        self.commentLabel.text = "\(comments)"
+        // コメント数の表示
+        self.commentNumLabel.text = "\(commentNum)"
 
     }
+    func setCommentData(_ commentData: CommentData, postId: String) {
 
-
+    }
+}
